@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Tie Designer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-bar">
+      <a href="index.html" class="logo">Custom Tie Designer</a>
+      <nav class="nav-bar" aria-label="Main">
+        <a href="#privacy-policy">Privacy Policy</a>
+        <a href="#about-us">About Us</a>
+        <a href="#faq">FAQ</a>
+        <a href="#terms">Terms &amp; Conditions</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </div>
+    <p class="header-tagline">Choose colors, patterns, add your logo &mdash; see it live, then save.</p>
+  </header>
+
+  <main class="main">
+    <section class="controls">
+      <h2>Design options</h2>
+
+      <div class="control-group">
+        <label for="color">Tie color</label>
+        <div class="color-row">
+          <input type="color" id="color" value="#0f0f0f">
+          <input type="text" id="colorHex" value="#0f0f0f" maxlength="7">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="pattern">Pattern</label>
+        <select id="pattern">
+          <option value="solid">Solid</option>
+          <option value="stripes">Stripes</option>
+          <option value="dots">Dots</option>
+          <option value="diagonal">Diagonal stripes</option>
+          <option value="check">Check</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="patternColor">Pattern color</label>
+        <div class="color-row">
+<input type="color" id="patternColor" value="#c9a227">
+        <input type="text" id="patternColorHex" value="#c9a227" maxlength="7">
+        </div>
+      </div>
+
+      <details class="advanced-settings">
+        <summary>Advanced Settings</summary>
+        <div class="advanced-inner">
+          <div class="control-group">
+            <label for="patternOrientation">Stripe / line direction</label>
+            <select id="patternOrientation">
+              <option value="vertical">Vertical</option>
+              <option value="horizontal">Horizontal</option>
+              <option value="diagonalUpRight">Diagonal (upper left → lower right)</option>
+              <option value="diagonalDownRight">Diagonal (upper right → lower left)</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="patternOnHead">
+              Apply pattern to head (knot and top)
+            </label>
+          </div>
+        </div>
+      </details>
+
+      <div class="control-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="showCollar" checked>
+          Show shirt collar in preview
+        </label>
+      </div>
+      <div class="control-group">
+        <label class="checkbox-label">
+          <input type="checkbox" id="includeCollarInDownload" checked>
+          Include collar in download
+        </label>
+      </div>
+
+      <div class="control-actions">
+        <button type="button" id="download" class="btn btn-primary">Download PNG</button>
+        <button type="button" id="saveConfig" class="btn btn-secondary">Save design (JSON)</button>
+      </div>
+    </section>
+
+    <section class="preview-section" aria-label="Tie view">
+      <canvas id="tieCanvas" width="400" height="520"></canvas>
+    </section>
+
+    <section class="goal-section" id="goalSection">
+      <p class="goal-label">Our goal of users this year</p>
+      <p class="goal-number-wrap"><span class="goal-number" id="goalNumber">0</span>+</p>
+    </section>
+
+    <article class="page-content info-on-index" id="info-content">
+      <section id="privacy-policy" class="info-section">
+        <h2>Privacy Policy</h2>
+        <p>This page describes how Custom Tie Designer collects, uses, and protects your information when you use our service. We do not collect personal data through the designer itself; any design data you save (e.g. JSON export) stays on your device unless you choose to share it.</p>
+        <p>If we introduce analytics or forms in the future, we will update this policy and seek your consent where required by law.</p>
+        <p>Last updated: 2025.</p>
+      </section>
+
+      <section id="about-us" class="info-section">
+        <h2>About Us</h2>
+        <p>Custom Tie Designer is a simple, in-browser tool to design a tie: choose colors and patterns, see a live preview, and download your design as a PNG or save it as JSON.</p>
+        <p>Our goal is to make it easy to visualize and share tie designs without leaving the browser.</p>
+      </section>
+
+      <section id="faq" class="info-section">
+        <h2>FAQ</h2>
+        <h3>How do I use the designer?</h3>
+        <p>Pick a tie color and pattern, optionally change pattern color and direction in Advanced Settings. Use “Show shirt collar in preview” to see the tie with a collar; use “Download PNG” to save the image.</p>
+        <h3>Can I save my design and load it later?</h3>
+        <p>Yes. Use “Save design (JSON)” to download a file with your current settings. You can re-apply it later by editing the JSON and re-importing if we add a load option, or by manually setting colors and pattern to match.</p>
+        <h3>Is my design data sent to a server?</h3>
+        <p>No. Everything runs in your browser. Downloads and saved JSON stay on your device.</p>
+      </section>
+
+      <section id="terms" class="info-section">
+        <h2>Terms &amp; Conditions</h2>
+        <p>By using Custom Tie Designer you agree to use it for lawful purposes only. The tool is provided “as is”; we do not guarantee uninterrupted or error-free service.</p>
+        <p>Designs you create are yours. We do not claim ownership of any design you generate or download. Do not use the service to create or distribute content that infringes others’ rights or violates applicable law.</p>
+        <p>We may update these terms from time to time; continued use after changes constitutes acceptance.</p>
+        <p>Last updated: 2025.</p>
+      </section>
+
+      <section id="contact" class="info-section">
+        <h2>Contact Us</h2>
+        <p>For questions, feedback, or support about Custom Tie Designer, please reach out through your preferred channel (e.g. email or contact form when available).</p>
+        <p>We aim to respond within a few business days.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <p>Custom Tie Designer &middot; Design, preview, download. Deploy via GitHub Pages.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
