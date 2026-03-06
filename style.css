@@ -140,6 +140,15 @@ body {
   line-height: 1.6;
 }
 
+.page-content a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.page-content a:hover {
+  text-decoration: underline;
+}
+
 .footer a {
   color: var(--accent);
   text-decoration: none;
